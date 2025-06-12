@@ -16,7 +16,7 @@ La función mysqli_query () se utiliza para ejecutar una consulta a la base de d
 •	$query es la consulta en lenguaje sql. <br>
 La cláusula or die() se utiliza para  capturar errores, y la función mysqli_error ($link) se puede usar para devolver el último mensaje de error para la llamada más reciente a una función de MySQLi que puede haberse ejecutado correctamente o haber fallado. Parámetro: $link : un identificador de enlace devuelto por mysqli_connect(). Los posibles valores devueltos son: una cadena que describe el error o una cadena vacía si no ha ocurrido error alguno.
 Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo $vResult, y a continuación se puede ejecutar el siguiente código (explicarlo):
-
+`php
 <?php 
 while ($fila = mysqli_fetch_array($vResultado))  { 
 ?> 
@@ -32,6 +32,7 @@ while ($fila = mysqli_fetch_array($vResultado))  {
 mysqli_free_result($vResultado); 
 mysqli_close($link); 
 ?>
+`
 Aqui while ($fila = mysqli_fetch_array($vResultado))  se indica que mientras haya una fila que traer entrara al while, $file= mysqli_fetch_array($vResultado) indica que los valores existentes en la fila se introduzcan en un array cuyos índices en principio pueden ser tanto asociativos (el nombre de la columna) como numéricos (empezando por cero).  
 Luego se van a mostrar en formato de tabla los valores que se guardaron en el array $fila utilizando el índice numérico. 
 Cuando se completa la query se utiliza la función  mysqli_free_result($vResultado)que libera la memoria asociada a un objeto de resultado en PHP, que se crea después de ejecutar una consulta SQL con mysqli_query() o mysqli_real_query(). Esto es crucial para evitar que la memoria se acumule innecesariamente, especialmente cuando se procesan grandes conjuntos de datos. 
