@@ -1,16 +1,19 @@
 Consulta a una base de datos: 
 Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función  mysqli_connect().
-Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:  
-•	$hostname es un nombre de servidor (dato que debemos consultar en nuestra cuenta de hosting). 
-•	$nombreUsuario es el nombre de usuario de base de datos, nombre que habremos especificado al crear la base de datos (si no lo hemos hecho, puede ser root). 
-•	$contraseña es la contraseña de acceso para el usuario de base de datos, contraseña que habremos especificado al crear la base de datos.
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:
+<br>
+•	$hostname es un nombre de servidor (dato que debemos consultar en nuestra cuenta de hosting). <br>
+•	$nombreUsuario es el nombre de usuario de base de datos, nombre que habremos especificado al crear la base de datos (si no lo hemos hecho, puede ser root). <br>
+•	$contraseña es la contraseña de acceso para el usuario de base de datos, contraseña que habremos especificado al crear la base de datos. <br>
 Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función  mysqli_select_db().
 Esta función debe pasar como parámetro :
-•	$nombreConexion el nombre de la conexión será el que hayamos obtenido previamente con la funcion mysqli_connect().
-•	$nombreBaseDatos es el nombre con el que hemos llamado a la base de datos al crearla. 
+<br>
+•	$nombreConexion el nombre de la conexión será el que hayamos obtenido previamente con la funcion mysqli_connect(). <br>
+•	$nombreBaseDatos es el nombre con el que hemos llamado a la base de datos al crearla. <br>
 La función mysqli_query () se utiliza para ejecutar una consulta a la base de datos que queramos y requiere como parámetros:
-•	$nombreConexion el nombre de la conexión será el que hayamos obtenido previamente con la funcion mysqli_connect().
-•	$query es la consulta en lenguaje sql. 
+<br>
+•	$nombreConexion el nombre de la conexión será el que hayamos obtenido previamente con la funcion mysqli_connect(). <br>
+•	$query es la consulta en lenguaje sql. <br>
 La cláusula or die() se utiliza para  capturar errores, y la función mysqli_error ($link) se puede usar para devolver el último mensaje de error para la llamada más reciente a una función de MySQLi que puede haberse ejecutado correctamente o haber fallado. Parámetro: $link : un identificador de enlace devuelto por mysqli_connect(). Los posibles valores devueltos son: una cadena que describe el error o una cadena vacía si no ha ocurrido error alguno.
 Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo $vResult, y a continuación se puede ejecutar el siguiente código (explicarlo):
 
